@@ -18,4 +18,6 @@ return {
 	'QVpGQUtFOktleTpqU3FwNG9GMXE5YnJ0OFQwSGk=';
 	'PremiumQU5aMS1OTVFKOEJSMnczYnJEU0JSMTBxUDRUZ0o=';
 	'PremiumQVpGQUtFOktleTpSMjYwSDJlZWZsN1JJblRIZg==';
+	'QVpGQUtFOktleTpiclA0MndDSk5HMTBCOXpwNHhCUg==';
+	'PremiumQVpGQUtFOktleTo2c1NUR1U1dEZCUncyMjEwMjJm'
 }
