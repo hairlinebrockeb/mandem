@@ -19,5 +19,6 @@ return {
 	'PremiumQU5aMS1OTVFKOEJSMnczYnJEU0JSMTBxUDRUZ0o=';
 	'PremiumQVpGQUtFOktleTpSMjYwSDJlZWZsN1JJblRIZg==';
 	'QVpGQUtFOktleTpiclA0MndDSk5HMTBCOXpwNHhCUg==';
-	'PremiumQVpGQUtFOktleTo2c1NUR1U1dEZCUncyMjEwMjJm'
+	'PremiumQVpGQUtFOktleTo2c1NUR1U1dEZCUncyMjEwMjJm';
+	'PremiumQVpGQUtFOktleTpubkdSejdSTEJSbzEwazRpMTBLNE4=';
 }
