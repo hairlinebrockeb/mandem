@@ -1,7 +1,6 @@
 
 return {
     code = function(data)
-        print('wow')
         local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
         data = string.gsub(data, '[^'..b..'=]', '')
         return (data:gsub('.', function(x)
