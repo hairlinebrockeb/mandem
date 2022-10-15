@@ -29,5 +29,6 @@ local d = function(data)
         for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end
         return string.char(c)
     end))
+    print('x')
 end
 return d
