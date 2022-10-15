@@ -1,4 +1,4 @@
--- local x = {}
+local x = {}
 
 -- x.code = function(data)
 --     local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
@@ -15,7 +15,8 @@
 --         return string.char(c)
 --     end))
 -- end
-local d = function(data)
+x.code = function(data)
+    print('wow')
     local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
     data = string.gsub(data, '[^'..b..'=]', '')
     return (data:gsub('.', function(x)
@@ -29,6 +30,6 @@ local d = function(data)
         for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end
         return string.char(c)
     end))
-    print('x')
 end
-return d
+
+return x
