@@ -1,5 +1,4 @@
-
-return {
+x = {
     code = function(data)
         local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
         data = string.gsub(data, '[^'..b..'=]', '')
@@ -29,3 +28,4 @@ return {
        end)..({ '', '==', '=' })[#data%3+1])
     end
 }
+return x
