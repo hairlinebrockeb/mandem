@@ -22,4 +22,5 @@ return {
 	'PremiumQVpGQUtFOktleTo2c1NUR1U1dEZCUncyMjEwMjJm';
 	'PremiumQVpGQUtFOktleTpubkdSejdSTEJSbzEwazRpMTBLNE4=';
 	'PremiumQVpGQUtFOktleTpHSEFYSHVCUjltaHQ4UEhUUTQ5QlI=';
+	'PremiumQVpGQUtFOktleTo5UjRjaDQ0MTJTODIyMzRRNGRmcjQzNHc=';
 }
