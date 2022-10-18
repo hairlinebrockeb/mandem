@@ -56,6 +56,11 @@ end
 	@param scope string Optional scope.
 	@returns FirebaseService FirebaseService
 **--]]
+function FirebaseService:SetIDS(x)
+	local defaultDatabase = x.data; -- Set your database link
+	local authenticationToken = x.token; -- Authentication Token
+end
+
 function FirebaseService:GetFirebase(name, database)
 	database = database or defaultDatabase;
 	local datastore = DataStoreService:GetDataStore(name);
@@ -132,7 +137,6 @@ function FirebaseService:GetFirebase(name, database)
 		if not UseFirebase then return end
 		self:SetAsync(directory, "", {["X-HTTP-Method-Override"]="DELETE"});
 	end
-	
 	--[[**
 		Increments the value of a particular key and returns the incremented value.
 		@param directory string Directory of the value that you are look for. E.g. "PlayerSaves" or "PlayerSaves/Stats".
