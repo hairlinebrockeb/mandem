@@ -1,12 +1,48 @@
 local module = {}
-function module:SHopBloodlines(rhop)
-      if game.ReplicatedStorage:FindFirstChild('Events') and game.ReplicatedStorage:FindFirstChild('Events'):FindFirstChild('DataEvent') then 
-          function tp(x)game.ReplicatedStorage:FindFirstChild('Events'):FindFirstChild('DataEvent'):FireServer('ServerTeleport',x.t) ;end
-          srv=srvx;tp({t=rhop})
-      elseif game.ReplicatedStorage:FindFirstChild('DataEvent') then 
-          function tp(x)game.ReplicatedStorage:FindFirstChild('DataEvent'):FireServer('ServerTeleport',x.t) ;end
-          srv=srvx;tp({t=rhop})
-      end
+ function module:SHopBloodlines()
+            local teleportId = ''
+            xId = game.PlaceId
+            if not isfile('hopperLog.txt') then writefile('hopperLog.txt','return {}') end
+            local xlog = readfile('hopperLog.txt'); 
+            local xt = loadstring(xlog)()
+            local Bunda = ''
+            table.insert(xt,game.JobId)
+            for _,v in pairs(xt) do if _ == 1 then Bunda = v else Bunda = Bunda..','..v; end end 
+
+            -- game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+            --     if State == Enum.TeleportState.Started then
+            --         syn.queue_on_teleport("repeat task.wait(); until game:IsLoaded();  writefile('hopperLog.txt',")
+            --     end
+            -- end)
+            writefile('hopperLog.txt','return {')
+            for _,u in pairs(xt) do 
+                appendfile('hopperLog.txt','"'..u..'",')
+            end
+            writefile('hopperLog.txt',readfile('hopperLog.txt'):sub(1,string.len(readfile('hopperLog.txt'))-1))
+            appendfile('hopperLog.txt','}')
+            --writefile('hopperLog.txt','return {'.."'"..Bunda.."'"..'}')
+            local DataEvent = nil 
+            if game.ReplicatedStorage:FindFirstChild('Events') and game.ReplicatedStorage:FindFirstChild('Events'):FindFirstChild('DataEvent') then 
+                DataEvent = game.ReplicatedStorage:FindFirstChild('Events'):FindFirstChild('DataEvent')
+            end
+            if game.ReplicatedStorage:FindFirstChild('DataEvent') then 
+                DataEvent = game.ReplicatedStorage:FindFirstChild('DataEvent')
+            end
+
+            repeat 
+                task.wait(0.01);
+                local xlog = readfile('hopperLog.txt'); 
+                local xt = loadstring(xlog)()
+                for _,server in pairs(game.ReplicatedStorage.Servers:GetChildren()) do 
+                    if not server:FindFirstChild('Current') and not table.find(xt,string.split(server.Value,' ')[1]) then 
+                        local tp = math.random(1,2)
+                        if tp == 2 then 
+                            teleportId = string.split(server.Value,' ')[1]
+                        end
+                    end
+                end
+                DataEvent:FireServer('ServerTeleport',teleportId)
+            until game.PlaceId ~= xId
 end
 
 return module
