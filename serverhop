@@ -1,0 +1,12 @@
+local module = {}
+function module:SHopBloodlines(rhop)
+      if game.ReplicatedStorage:FindFirstChild('Events') and game.ReplicatedStorage:FindFirstChild('Events'):FindFirstChild('DataEvent') then 
+          function tp(x)game.ReplicatedStorage:FindFirstChild('Events'):FindFirstChild('DataEvent'):FireServer('ServerTeleport',x.t) ;end
+          srv=srvx;tp({t=rhop})
+      elseif game.ReplicatedStorage:FindFirstChild('DataEvent') then 
+          function tp(x)game.ReplicatedStorage:FindFirstChild('DataEvent'):FireServer('ServerTeleport',x.t) ;end
+          srv=srvx;tp({t=rhop})
+      end
+end
+
+return module
