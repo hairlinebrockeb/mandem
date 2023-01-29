@@ -224,3 +224,4 @@ end
 
 return Decrypted
 end
+return Encryptor
